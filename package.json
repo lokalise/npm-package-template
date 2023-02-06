@@ -1,5 +1,5 @@
 {
-  "name": "npm-package-template",
+  "name": "@lokalise/your-project-name",
   "description": "Template repository for creating NPM packages",
   "scripts": {
     "build": "echo TODO",
