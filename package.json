@@ -1,0 +1,9 @@
+{
+  "name": "npm-package-template",
+  "description": "Template repository for creating NPM packages",
+  "scripts": {
+    "build": "echo TODO",
+    "test": "echo TODO",
+    "lint": "echo TODO"
+  }
+}
