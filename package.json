@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "vite build",
-    "lint": "eslint src/."
+    "lint": "eslint src/.",
+    "lint:fix": "npm run lint -- --fix"
   },
   "type": "module",
   "files": [
