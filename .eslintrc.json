@@ -1,7 +1,12 @@
 {
+  "plugins": ["prettier"],
   "extends": [
-    "@lokalise/eslint-config-lokalise-frontend/core",
-    "@lokalise/eslint-config-lokalise-frontend/typescript",
-    "@lokalise/eslint-config-lokalise-frontend/jest"
-  ]
+    "@lokalise/lokalise-frontend/core",
+    "@lokalise/lokalise-frontend/typescript",
+    "@lokalise/lokalise-frontend/jest",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  }
 }
