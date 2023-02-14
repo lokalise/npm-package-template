@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   build: {
@@ -8,5 +8,8 @@ export default defineConfig({
       name: "YourProjectName",
       fileName: "your-project-name",
     },
+  },
+  test: {
+    globals: true,
   },
 });

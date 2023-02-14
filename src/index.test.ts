@@ -1,5 +1,5 @@
 import { add } from "./index";
 
-it("adds two numbers", () => {
+test("adds two numbers", () => {
   expect(add(1, 2)).toBe(3);
 });
