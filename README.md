@@ -29,3 +29,9 @@ Check out [husky](https://typicode.github.io/husky) docs for more info.
 You can use `npm run commit` to interactively construct correct commit messsage.
 
 Check out [commitlint](https://commitlint.js.org) docs for examples of how to customise.
+
+## Release actions
+
+The following token needs to be set in the Github repo for the `prerelease` and `release` Github Actions to work:
+
+- `secrets.NPM_TOKEN` (need this to publish on NPM)
