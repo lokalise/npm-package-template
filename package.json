@@ -6,7 +6,8 @@
     "lint": "eslint --cache .",
     "lint:fix": "npm run lint -- --fix",
     "test": "vitest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "commit"
   },
   "type": "module",
   "files": [
@@ -21,6 +22,9 @@
     }
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.3",
+    "@commitlint/config-conventional": "^17.4.3",
+    "@commitlint/prompt-cli": "^17.4.3",
     "@lokalise/eslint-config-lokalise-frontend": "0.3.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-prettier": "4.2.1",

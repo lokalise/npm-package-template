@@ -4,7 +4,7 @@ TODO documentation
 
 ## Getting Started
 
-Find and replace all instances of the symbols (case insensitive):
+Find and replace all instances of the symbols (case-insensitive):
 
 - `your-project-name`
 - `YourProjectName`
@@ -23,3 +23,9 @@ By default, pre-commit hook will run `npm run lint:fix`. Feel free to remove tha
 pre-commit commands.
 
 Check out [husky](https://typicode.github.io/husky) docs for more info.
+
+### commitlint
+
+You can use `npm run commit` to interactively construct correct commit messsage.
+
+Check out [commitlint](https://commitlint.js.org) docs for examples of how to customise.
