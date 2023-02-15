@@ -1,0 +1,49 @@
+name: PR Checks
+on: pull_request
+
+jobs:
+  pr-checks-build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "npm"
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build Package
+        run: npm run build
+  pr-checks-code-lint:
+    name: Code Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "npm"
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Code Linting
+        run: npm run lint
+  pr-checks-tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "npm"
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm run test

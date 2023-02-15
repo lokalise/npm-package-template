@@ -1,0 +1,33 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3 # This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          registry-url: "https://registry.npmjs.org" # This registry URL is necessary for publishing on NPM
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build Package
+        run: npm run build
+      - name: Release Package
+        env:
+          HUSKY: 0 # skip the husky hooks
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # should be set in Github repo, need this to publish on NPM
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically provided by Github Actions, need this to create a GitHub Release
+        run: |
+          npx semantic-release
