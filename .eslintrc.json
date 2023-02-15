@@ -14,6 +14,9 @@
       "node": {
         "extensions": [".js", ".ts", ".d.ts"]
       }
+    },
+    "jest": {
+      "version": ">= 27"
     }
   }
 }
