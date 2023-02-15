@@ -1,8 +1,6 @@
-import { RuleConfigSeverity, type UserConfig } from "@commitlint/types";
-
-const Configuration: UserConfig = {
+const Configuration = {
   extends: ["@commitlint/config-conventional"],
-  rules: { "chore-breaking-rule": [RuleConfigSeverity.Error, "never"] },
+  rules: { "chore-breaking-rule": [2, "never"] },
   plugins: [
     {
       rules: {
@@ -22,4 +20,5 @@ const Configuration: UserConfig = {
   ],
 };
 
+// eslint-disable-next-line no-undef
 module.exports = Configuration;

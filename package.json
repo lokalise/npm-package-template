@@ -3,21 +3,22 @@
   "version": "1.0.0",
   "scripts": {
     "build": "vite build",
-    "lint": "eslint --cache .",
+    "lint": "eslint --cache . --ext .js,.cjs,.ts",
     "lint:fix": "npm run lint -- --fix",
     "test": "vitest",
     "prepare": "husky install",
     "commit": "commit"
   },
+  "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/your-project-name.umd.js",
-  "module": "./dist/your-project-name.mjs",
+  "main": "./dist/your-project-name.umd.cjs",
+  "module": "./dist/your-project-name.js",
   "exports": {
     ".": {
-      "import": "./dist/your-project-name.mjs",
-      "require": "./dist/your-project-name.umd.js"
+      "import": "./dist/your-project-name.js",
+      "require": "./dist/your-project-name.umd.cjs"
     }
   },
   "devDependencies": {
