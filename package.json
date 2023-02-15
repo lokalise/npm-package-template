@@ -9,16 +9,15 @@
     "prepare": "husky install",
     "commit": "commit"
   },
-  "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/your-project-name.umd.cjs",
-  "module": "./dist/your-project-name.js",
+  "main": "./dist/your-project-name.umd.js",
+  "module": "./dist/your-project-name.mjs",
   "exports": {
     ".": {
-      "import": "./dist/your-project-name.js",
-      "require": "./dist/your-project-name.umd.cjs"
+      "import": "./dist/your-project-name.mjs",
+      "require": "./dist/your-project-name.umd.js"
     }
   },
   "devDependencies": {
@@ -37,6 +36,7 @@
     "husky": "8.0.3",
     "prettier": "2.8.4",
     "semantic-release": "20.1.0",
+    "ts-node": "10.9.1",
     "vite": "4.1.1",
     "vitest": "0.28.5"
   }
