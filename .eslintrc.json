@@ -22,6 +22,12 @@
     {
       "files": ["*.ts"],
       "extends": ["@lokalise/lokalise-frontend/typescript"]
+    },
+    {
+      "files": ["**/*.cjs"],
+      "env": {
+        "node": true
+      }
     }
   ]
 }
