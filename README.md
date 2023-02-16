@@ -35,3 +35,7 @@ Check out [commitlint](https://commitlint.js.org) docs for examples of how to cu
 The following token needs to be set in the Github repo for the `prerelease` and `release` Github Actions to work:
 
 - `secrets.NPM_TOKEN` (need this to publish on NPM)
+
+## License
+
+This project is APACHE, VERSION 2.0 licensed, see LICENSE.md for details.
