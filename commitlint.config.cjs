@@ -1,16 +1,22 @@
 const Configuration = {
   extends: ["@commitlint/config-conventional"],
-  rules: { "chore-breaking-rule": [2, "never"] },
+  rules: { "breaking-changes-rules": [2, "never"] },
+  parserPreset: {
+    parserOpts: { noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"] },
+  },
   plugins: [
     {
       rules: {
-        "chore-breaking-rule": (parsed) => {
+        "breaking-changes-rules": (parsed) => {
           if (
-            parsed.type === "chore" &&
+            ["chore", "refactor"].includes(parsed.type) &&
             parsed.footer !== null &&
             parsed.footer.includes("BREAKING CHANGE")
           ) {
-            return [false, "chore commits cannot contain breaking changes"];
+            return [
+              false,
+              `${parsed.type} commits cannot contain breaking changes`,
+            ];
           } else {
             return [true];
           }
