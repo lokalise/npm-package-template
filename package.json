@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "vite build",
-    "lint": "eslint --cache .",
+    "lint": "eslint --cache . --ext .js,.cjs,.ts",
     "lint:fix": "npm run lint -- --fix",
     "test": "vitest",
     "prepare": "husky install",
