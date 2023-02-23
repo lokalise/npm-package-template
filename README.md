@@ -30,6 +30,8 @@ In order to publish to NPM you will need to add an NPM token as a GitHub secret 
 
 Once you are all setup, we recommend reviewing and rewriting this README as necessary to make it more specific to your project.
 
+Update CODEOWNERS file with your personal and/or team tags.
+
 The last thing to do is actually start writing your code! We recommend starting from `src/index.ts` and `src/index.test.ts`.
 
 ## Customizing the build
