@@ -1,33 +1,12 @@
 {
   "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".ts", ".d.ts"]
-      }
-    },
     "jest": {
       "version": ">= 27"
     }
   },
-  "plugins": ["prettier"],
   "extends": [
     "@lokalise/lokalise-frontend/core",
     "@lokalise/lokalise-frontend/jest",
-    "prettier"
-  ],
-  "rules": {
-    "prettier/prettier": "error"
-  },
-  "overrides": [
-    {
-      "files": ["*.ts"],
-      "extends": ["@lokalise/lokalise-frontend/typescript"]
-    },
-    {
-      "files": ["**/*.cjs"],
-      "env": {
-        "node": true
-      }
-    }
+    "@lokalise/lokalise-frontend/typescript"
   ]
 }
