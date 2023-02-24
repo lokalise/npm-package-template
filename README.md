@@ -2,7 +2,7 @@
 
 ## Project Purpose
 
-This is a template repository, intended to accelerate teams creating packages for publishing on NPM.
+This is a template repository, intended to accelerate teams at Lokalise to create packages for publishing on NPM.
 
 This repository is not specifically frontend focused.
 
@@ -57,6 +57,8 @@ The following token needs to be set in the Github repo for the `prerelease` and 
 
 - `secrets.NPM_TOKEN` (need this to publish on NPM)
 
+When performing a release, make sure to follow our conventional commit approach, as described in [contribution documentation](https://github.com/lokalise/npm-package-template/blob/main/CONTRIBUTING.md). 
+
 ## License
 
 This project is APACHE, VERSION 2.0 licensed, see LICENSE.md for details.
@@ -64,3 +66,7 @@ This project is APACHE, VERSION 2.0 licensed, see LICENSE.md for details.
 ## Other Resources
 
 This template represents the culmination of Lokalise technical recommendations as documented in the [Frontend Radar](https://lokalise.atlassian.net/l/cp/Bqkz2hC5).
+
+## Support Us
+
+**lokalise-npm-package-template** was created by Lokalise Engineering Team. Support our work by keeping this line in your README.
