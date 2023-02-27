@@ -57,7 +57,7 @@ The following token needs to be set in the Github repo for the `prerelease` and 
 
 - `secrets.NPM_TOKEN` (need this to publish on NPM)
 
-When performing a release, make sure to follow our conventional commit approach, as described in [contribution documentation](https://github.com/lokalise/npm-package-template/blob/main/CONTRIBUTING.md). 
+When performing a release, make sure to follow our conventional commit approach, as described in [contribution documentation](https://github.com/lokalise/npm-package-template/blob/main/CONTRIBUTING.md).
 
 ## License
 

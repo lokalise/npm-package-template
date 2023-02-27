@@ -1,35 +1,35 @@
 # Contributing
 
 <!-- TOC -->
-* [Contributing](#contributing)
-  * [Submitting a Change](#submitting-a-change)
-    * [Commit Message Convention](#commit-message-convention)
-    * [Common Commit Types](#common-commit-types)
-    * [Breaking Changes](#breaking-changes)
-      * [What is a breaking change](#what-is-a-breaking-change)
-      * [How to approach breaking changes](#how-to-approach-breaking-changes)
-      * [Marking changes as breaking](#marking-changes-as-breaking)
-      * [Removing deprecated functionality](#removing-deprecated-functionality)
-    * [Reverting Commits](#reverting-commits)
-    * [Highlight your code snippets in your messages](#highlight-your-code-snippets-in-your-messages)
-  * [Release Process](#release-process)
-    * [1) Feature Branches (regular changes)](#1--feature-branches--regular-changes-)
-    * [2) Pre-Releases (Beta / Release Candidate branches for complex changes)](#2--pre-releases--beta--release-candidate-branches-for-complex-changes-)
-    * [3) Experimental Releases](#3--experimental-releases)
-<!-- TOC -->
+
+- [Contributing](#contributing)
+  - [Submitting a Change](#submitting-a-change)
+    - [Commit Message Convention](#commit-message-convention)
+    - [Common Commit Types](#common-commit-types)
+    - [Breaking Changes](#breaking-changes)
+      - [What is a breaking change](#what-is-a-breaking-change)
+      - [How to approach breaking changes](#how-to-approach-breaking-changes)
+      - [Marking changes as breaking](#marking-changes-as-breaking)
+      - [Removing deprecated functionality](#removing-deprecated-functionality)
+    - [Reverting Commits](#reverting-commits)
+    - [Highlight your code snippets in your messages](#highlight-your-code-snippets-in-your-messages)
+  - [Release Process](#release-process)
+  _ [1) Feature Branches (regular changes)](#1--feature-branches--regular-changes-)
+  _ [2) Pre-Releases (Beta / Release Candidate branches for complex changes)](#2--pre-releases--beta--release-candidate-branches-for-complex-changes-) \* [3) Experimental Releases](#3--experimental-releases)
+  <!-- TOC -->
 
 ---
 
 ## Submitting a Change
 
--   Clone the repo
--   `npm install`
--   `git checkout -b my-branch-name`. Short, accurate and lowercase branch names are recommended.
--   Do your changes and make sure:
-    -   Your commit(s) are following [Conventional Commit Conventions](#commit-message-convention) ✅
-        -   **NOTE**: We use [semantic releases](https://github.com/semantic-release/semantic-release). This means, all commits are processed to determine next version as well as producing release notes when a PR is merged in `main`.
-        PR is approved by at least by one of the [Codeowners](https://github.com/lokalise/npm-package-template/blob/main/CODEOWNERS) ✅
--   Merge your changes.
+- Clone the repo
+- `npm install`
+- `git checkout -b my-branch-name`. Short, accurate and lowercase branch names are recommended.
+- Do your changes and make sure:
+  - Your commit(s) are following [Conventional Commit Conventions](#commit-message-convention) ✅
+    - **NOTE**: We use [semantic releases](https://github.com/semantic-release/semantic-release). This means, all commits are processed to determine next version as well as producing release notes when a PR is merged in `main`.
+      PR is approved by at least by one of the [Codeowners](https://github.com/lokalise/npm-package-template/blob/main/CODEOWNERS) ✅
+- Merge your changes.
 
 ### Commit Message Convention
 
@@ -38,11 +38,11 @@ We currently use [Conventional Commits](https://www.conventionalcommits.org/en/v
 
 ### Common Commit Types
 
--   feat → Addition or removal of features. Eg: `feat: add table on landing page`, `feat: remove table from landing page`. Will increase the `minor` version.
--   fix → Bug fixing, followed by the bug. Eg: `fix: illustration overflows in mobile view`. Will increase the `patch` version.
--   refactor → Code refactors. E.g. `refactor: change to use shared merge refs hook in Menu`. Will increase the `patch` version.
--   chore → _Will not trigger a release._ Code that package won't output. E.g. `chore: add revert documentation to contributing docs`.
--   `BREAKING CHANGE: ` or `BREAKING CHANGES: ` footer → Will increase the `major` version. Breaking changes are only allowed for the `feat` and `fix` commit types.
+- feat → Addition or removal of features. Eg: `feat: add table on landing page`, `feat: remove table from landing page`. Will increase the `minor` version.
+- fix → Bug fixing, followed by the bug. Eg: `fix: illustration overflows in mobile view`. Will increase the `patch` version.
+- refactor → Code refactors. E.g. `refactor: change to use shared merge refs hook in Menu`. Will increase the `patch` version.
+- chore → _Will not trigger a release._ Code that package won't output. E.g. `chore: add revert documentation to contributing docs`.
+- `BREAKING CHANGE: ` or `BREAKING CHANGES: ` footer → Will increase the `major` version. Breaking changes are only allowed for the `feat` and `fix` commit types.
 
 ### Breaking Changes
 
@@ -67,7 +67,7 @@ particular piece of code should not be used. When applicable, provide an alterna
 
 If changes are breaking, they **must** contain `BREAKING CHANGE` or `BREAKING CHANGES` in the footer of the commit message. Breaking changes are only allowed for the `feat` and `fix` commit types.
 
-```
+```shell
 git commit -m 'feat: remove "foo" export
 
 BREAKING CHANGE: "foo" export no longer available, use "bar".'
@@ -119,17 +119,17 @@ below for visual clarity:
 
 (See image below for visual clarity)
 
--   Branch off from `main` to your `feature-branch`.
--   Commit the code you need and do your local tests.
--   Open a PR and wait for approval.
--   Checkout `beta` branch and `cherry-pick` your changes from `feature-branch`:
-    -   If you previously checked out beta, always ensure it is always up-to-date with `main` before `cherry-pick`'ing. By doing it, you release a `beta` version based on the current `main` branch + your cherry-picked changes.
-    -   **NOTE:** Everytime a push in beta occurs a new version gets deployed in NPM. Changelog, Package.json and Lock files also change. Update your local beta branch after the release has finished.
-    -   Use the beta package to test your application.
-    -   **NOTE:** ⛔ Never merge `beta` in `main`.
--   After tests are complete you either:
-    -   Merge your `feature-branch` in `main`.
-    -   `cherry-pick` your `feature-branch` commits into an `rc` branch to hold / group those for a release in the upcoming weeks.
+- Branch off from `main` to your `feature-branch`.
+- Commit the code you need and do your local tests.
+- Open a PR and wait for approval.
+- Checkout `beta` branch and `cherry-pick` your changes from `feature-branch`:
+  - If you previously checked out beta, always ensure it is always up-to-date with `main` before `cherry-pick`'ing. By doing it, you release a `beta` version based on the current `main` branch + your cherry-picked changes.
+  - **NOTE:** Everytime a push in beta occurs a new version gets deployed in NPM. Changelog, Package.json and Lock files also change. Update your local beta branch after the release has finished.
+  - Use the beta package to test your application.
+  - **NOTE:** ⛔ Never merge `beta` in `main`.
+- After tests are complete you either:
+  - Merge your `feature-branch` in `main`.
+  - `cherry-pick` your `feature-branch` commits into an `rc` branch to hold / group those for a release in the upcoming weeks.
 
 <img src="https://user-images.githubusercontent.com/2275908/193548740-692a3567-d305-4437-b298-742a2e97980d.png" alt="Pre-Releases Flow" width="600">
 
@@ -139,13 +139,12 @@ below for visual clarity:
 
 Similar to pre-releases (2), they're not required to either be tested through beta or rc branches. They are one off simpler and less complex experimental features.
 
--   Branch off from `main` to your `feature-branch`.
--   Commit the code you need and do your local tests.
--   Open a PR and wait for approval.
--   Branch off from `feature-branch` to a branch prepended with `exp-*`. eg. `exp-feature-branch`.
--   When pushing your changes a new experimental release is promoted. eg. `1.3.0-exp-feature-branch.1`.
--   **NOTE:** ⛔ Never merge `exp-*` branches in `main`.
--   After tests are complete **delete** the `exp-*` branch in origin.
+- Branch off from `main` to your `feature-branch`.
+- Commit the code you need and do your local tests.
+- Open a PR and wait for approval.
+- Branch off from `feature-branch` to a branch prepended with `exp-*`. eg. `exp-feature-branch`.
+- When pushing your changes a new experimental release is promoted. eg. `1.3.0-exp-feature-branch.1`.
+- **NOTE:** ⛔ Never merge `exp-*` branches in `main`.
+- After tests are complete **delete** the `exp-*` branch in origin.
 
 <img src="https://user-images.githubusercontent.com/2275908/195072598-be6c6ab4-2be1-4f74-941f-5f4ff0337ed0.png" alt="Experimental Releases" width="600">
-
