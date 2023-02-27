@@ -14,8 +14,9 @@
     - [Reverting Commits](#reverting-commits)
     - [Highlight your code snippets in your messages](#highlight-your-code-snippets-in-your-messages)
   - [Release Process](#release-process)
-  _ [1) Feature Branches (regular changes)](#1--feature-branches--regular-changes-)
-  _ [2) Pre-Releases (Beta / Release Candidate branches for complex changes)](#2--pre-releases--beta--release-candidate-branches-for-complex-changes-) \* [3) Experimental Releases](#3--experimental-releases)
+    - [1) Feature Branches (regular changes)](#1-feature-branches-regular-changes)
+    - [2) Pre-Releases (Beta / Release Candidate branches for complex changes)](#2-pre-releases-beta-/-release-candidate-branches-for-complex-changes)
+    - [3) Experimental Releases](#3-experimental-releases)
   <!-- TOC -->
 
 ---
@@ -84,7 +85,7 @@ migrated deprecated features in timely manner, the breaking change should actual
 
 If the commit reverts a previous commit, it should begin with `revert:` , followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.` followed by a reason for the revert, where the hash is the SHA of the commit being reverted:
 
-```
+```shell
 revert: feat: add type to foo var
 
 This reverts commit a7721472aad3bab9deff29e184df9a05b274e2dc. Reason to revert.
@@ -98,7 +99,7 @@ You can follow any of the regular prerelease and release processes documented be
 
 Wrap your message in double quotes and escape the back ticks.
 
-```
+```shell
 git commit -m "feat: add \`boolean\` prop \`open\` to \`<dialog>\`"
 ```
 

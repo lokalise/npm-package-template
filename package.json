@@ -5,7 +5,7 @@
     "build": "vite build",
     "lint:eslint": "eslint --cache . --ext .js,.cjs,.ts",
     "lint:ts": "tsc --noEmit",
-    "lint": "npm run lint:eslint; npm run lint:ts",
+    "lint": "npm run lint:eslint && npm run lint:ts",
     "lint:fix": "npm run lint:eslint -- --fix",
     "test": "vitest run",
     "prepare": "husky install",
