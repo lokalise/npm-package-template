@@ -5,8 +5,8 @@
     }
   },
   "extends": [
-    "@lokalise/lokalise-frontend/core",
-    "@lokalise/lokalise-frontend/jest",
-    "@lokalise/lokalise-frontend/typescript"
+    "@lokalise/frontend/core",
+    "@lokalise/frontend/jest",
+    "@lokalise/frontend/typescript"
   ]
 }

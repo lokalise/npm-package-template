@@ -2,7 +2,7 @@
 
 ## Project Purpose
 
-This is a template repository, intended to accelerate teams at Lokalise to create packages for publishing on NPM.
+This is a template repository, intended to accelerate teams at Lokalise to create public packages for publishing on NPM.
 
 This repository is not specifically frontend focused.
 
