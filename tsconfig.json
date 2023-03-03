@@ -8,6 +8,7 @@
     "noImplicitOverride": true,
     "noUnusedLocals": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "types": ["vitest/globals"]
   }
 }
