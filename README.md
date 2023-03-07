@@ -21,16 +21,16 @@ The following are all handled for you and do not need to be configured:
 
 ## Getting Started
 
-Find and replace all instances of the symbols (case-insensitive) with your project name:
-
-- `your-project-name`
-- `YourProjectName`
-
-In order to publish to NPM you will need to add an NPM token as a GitHub secret with the name `NPM_TOKEN`.
+- [ ] Find and replace all instances of the symbols (case-insensitive) with your project name:
+  - `your-project-name`
+  - `YourProjectName`
+- [ ] Add an NPM token to GitHub secrets with the name `NPM_TOKEN`
+  - This is required for publishing under the `@lokalise` NPM namespace.
+- [ ] Add a GitHub token to GitHub secrets with the name `GITHUB_TOKEN`
+  - This is required to allow the automated semantic release process to push to `main`.
+- [ ] Update the `CODEOWNERS` file with your personal and/or team tags.
 
 Once you are all setup, we recommend reviewing and rewriting this README as necessary to make it more specific to your project.
-
-Update CODEOWNERS file with your personal and/or team tags.
 
 The last thing to do is actually start writing your code! We recommend starting from `src/index.ts` and `src/index.test.ts`.
 
@@ -42,6 +42,7 @@ reviewing Vite's documentation on this here: [Vite Library Mode](https://vitejs.
 
 In case you add direct or peer dependencies, you should uncomment following lines (and corresponding import above) to
 ensure those dependencies are not directly included in the built package.
+
 ```tsx
 external: Object.keys(packageJson.dependencies).flatMap((dep) => [
 	dep,
