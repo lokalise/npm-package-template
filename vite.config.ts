@@ -29,6 +29,14 @@ export default defineConfig({
 				// Must be `false` for `preserveModules: true`
 				inlineDynamicImports: false,
 			},
+
+			/**
+			 * The Rollup building process does not break on some warning, this one ensures it returns
+			 * correct exit status code so the GitHub Actions can break.
+			 */
+			onwarn(warning) {
+				throw Object.assign(new Error(), warning);
+			},
 		},
 		commonjsOptions: {
 			// Assumes all external dependencies are ESM dependencies. Just ensures
@@ -39,5 +47,15 @@ export default defineConfig({
 	test: {
 		globals: true,
 	},
-	plugins: [dts()],
+	plugins: [
+		dts({
+			afterDiagnostic: (diagnostics) => {
+				if (diagnostics.length > 0) {
+					throw new Error("Have issues with generating types", {
+						cause: diagnostics,
+					});
+				}
+			},
+		}),
+	],
 });
