@@ -76,6 +76,18 @@ When performing a release, make sure to follow our conventional commit approach,
 
 This project is APACHE, VERSION 2.0 licensed, see LICENSE.md for details.
 
+## Template Specific Internal Notes
+
+The following notes are only relevant to the maintainers of this template. You may delete this section when you clone it.
+
+### Creating a release of the template
+
+- Merge your PR and create a [new draft release](https://github.com/lokalise/npm-package-template/releases/new).
+- Create a new tag `vx.x.x`. Consider the type of changes you added. Major, minor or patch.
+- In Release title mention the same version `vx.x.x`.
+- Generate release notes.
+- Publish Release
+
 ## Other Resources
 
 This template represents the culmination of Lokalise technical recommendations as documented in the [Frontend Radar](https://lokalise.atlassian.net/l/cp/Bqkz2hC5).
