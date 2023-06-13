@@ -6,8 +6,8 @@
   - [Submitting a Change](#submitting-a-change)
     - [Commit Message Convention](#commit-message-convention)
     - [Common Commit Types](#common-commit-types)
+    - [Rebase Interactive](#rebase-interactive)
     - [Breaking Changes](#breaking-changes)
-      - [What is a breaking change](#what-is-a-breaking-change)
       - [How to approach breaking changes](#how-to-approach-breaking-changes)
       - [Marking changes as breaking](#marking-changes-as-breaking)
       - [Removing deprecated functionality](#removing-deprecated-functionality)
@@ -23,19 +23,18 @@
 
 ## Submitting a Change
 
-- Clone the repo
-- `npm install`
+- `npm install`.
 - `git checkout -b my-branch-name`. Short, accurate and lowercase branch names are recommended.
-- Do your changes and make sure:
-  - Your commit(s) are following [Conventional Commit Conventions](#commit-message-convention) ✅
-    - **NOTE**: We use [semantic releases](https://github.com/semantic-release/semantic-release). This means, all commits are processed to determine next version as well as producing release notes when a PR is merged in `main`.
-      PR is approved by at least by one of the [Codeowners](https://github.com/lokalise/npm-package-template/blob/main/CODEOWNERS) ✅
-- Merge your changes.
+- Commit your changes. Check our [Commit Message Convention](#commit-message-convention).
+- Clean your commit history(if required). We recommend using [rebase interactive](#rebase-interactive).
+- PR is approved by at least one of the [Codeowners](https://github.com/lokalise/npm-package-template/blob/main/CODEOWNERS).
+- Rebase with `main` and **Merge** your changes.
 
 ### Commit Message Convention
 
-Before committing think about the message you will be sending to consumers. Be short and straight to the point.
-We currently use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+This project follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) approach and uses [semantic releases](https://github.com/semantic-release/semantic-release) for automated version management, release notes and package publishing.
+
+Check [common commit types](#common-commit-types) as `semantic-release` processes them to determine the next version as well as producing release notes when a PR is merged in `main`.
 
 ### Common Commit Types
 
@@ -43,26 +42,25 @@ We currently use [Conventional Commits](https://www.conventionalcommits.org/en/v
 - fix → Bug fixing, followed by the bug. Eg: `fix: illustration overflows in mobile view`. Will increase the `patch` version.
 - refactor → Code refactors. E.g. `refactor: change to use shared merge refs hook in Menu`. Will increase the `patch` version.
 - chore → _Will not trigger a release._ Code that package won't output. E.g. `chore: add revert documentation to contributing docs`.
-- `BREAKING CHANGE: ` or `BREAKING CHANGES: ` footer → Will increase the `major` version. Breaking changes are only allowed for the `feat` and `fix` commit types.
+- `BREAKING CHANGE: ` or `BREAKING CHANGES: ` footer → Will increase the `major` version. Breaking changes are only allowed for the `feat` and `fix` commit types. More info on [breaking changes](#breaking-changes).
+
+### Rebase Interactive
+
+Because clean, linear and meaningful commit history is important, **Git interactive rebase** allows you to change individual commits, squash commits together, drop commits or change the order of the commits.
+
+Here's a nice tutorial from [jetbrains](https://www.jetbrains.com/idea/guide/tutorials/git-interactive-rebase/) to learn how to rebase interactive from the UI or the CLI. [Configure your local git editor](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) `core.editor`. As an example you might not want to use VI or emacs editors for interactive rebase. You might want to use something simpler as vscode **(our recommendation)** or phpstorm for the process.
 
 ### Breaking Changes
 
-#### What is a breaking change
+A breaking change is any change in library that _could_ break existing consumer's code. Or, in other words, these are changes that _might_ require consumer to update their code before they can use the latest version.
 
-A breaking change is any change in library that _could_ break existing consumer's code. Or, in other words, these are
-changes that _might_ require consumer to update their code before they can use the latest version.
+Having breaking changes forces consumers to either stick with older version of the library or make changes when they might not have time for it.
 
-Having breaking changes forces consumers to either stick with older version of the library or make changes when they might
-not have time for it.
-
-Examples of breaking changes include changing prop type or name, removing exported type or function, bumping major peer
-dependency version, etc.
+Examples of breaking changes include changing prop type or name, removing exported type or function, bumping major peer dependency version, etc.
 
 #### How to approach breaking changes
 
-In case you're removing or renaming something, see if you can instead mark that piece of code as deprecated (using
-[`@deprecated`](https://jsdoc.app/tags-deprecated.html) tag). This will inform consumers of library that the
-particular piece of code should not be used. When applicable, provide an alternative.
+In case you're removing or renaming something, see if you can instead mark that piece of code as deprecated (using [`@deprecated`](https://jsdoc.app/tags-deprecated.html) tag). This will inform consumers of library that the particular piece of code should not be used. When applicable, provide an alternative.
 
 #### Marking changes as breaking
 
@@ -76,10 +74,16 @@ BREAKING CHANGE: "foo" export no longer available, use "bar".'
 
 #### Removing deprecated functionality
 
-If we followed suggestion from the [previous section](#how-to-approach-breaking-changes), we're likely to end up with a
-bunch of deprecated functionality that we don't want to maintain forever. Every once in a while we'll do a breaking
-change release where the only changes will be removal of deprecated features. This should mean that, if consumers
-migrated deprecated features in timely manner, the breaking change should actually be painless.
+If we followed suggestion from the [previous section](#how-to-approach-breaking-changes), we're likely to end up with a bunch of deprecated functionality that we don't want to maintain forever. Every once in a while we'll do a breaking change release where the only changes will be removal of deprecated features. 
+
+This should mean that, if consumers migrated deprecated features in timely manner, the breaking change should actually be painless.
+
+### I accidently merged commits from Main
+
+There's a couple of options that could be considered:
+
+- By using [rebase interactive](#rebase-interactive). Check the total amount of commits _(X)_ you have in your branch, run `git rebase -i HEAD~X` and drop the commits brought from main.
+- By opening a new Feature Branch, [cherry-pick](https://git-scm.com/docs/git-cherry-pick) your commits from your old branch and push.
 
 ### Reverting Commits
 
