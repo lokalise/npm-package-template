@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "18.6.1",
-    "@commitlint/config-conventional": "18.6.1",
+    "@commitlint/config-conventional": "18.6.2",
     "@commitlint/prompt-cli": "18.6.1",
     "@lokalise/eslint-config-frontend": "2.0.1",
     "@semantic-release/changelog": "6.0.3",
