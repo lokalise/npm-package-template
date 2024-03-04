@@ -27,7 +27,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.0.1",
+    "@commitlint/cli": "19.0.3",
     "@commitlint/config-conventional": "19.0.3",
     "@commitlint/prompt-cli": "19.0.3",
     "@lokalise/eslint-config-frontend": "2.0.1",
