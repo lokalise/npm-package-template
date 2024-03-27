@@ -44,7 +44,7 @@
     "semantic-release": "23.0.6",
     "typescript": "5.1.6",
     "vite": "4.5.2",
-    "vite-plugin-dts": "3.7.3",
+    "vite-plugin-dts": "3.8.0",
     "vitest": "0.34.6"
   }
 }
