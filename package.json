@@ -7,7 +7,6 @@
     "lint": "biome check && npm run lint:ts",
     "lint:fix": "biome check --write",
     "test": "vitest run",
-    "prepare": "husky install",
     "commit": "commit"
   },
   "type": "module",
@@ -35,7 +34,6 @@
     "@semantic-release/github": "10.1.0",
     "@semantic-release/npm": "12.0.1",
     "@semantic-release/release-notes-generator": "14.0.1",
-    "husky": "9.1.0",
     "semantic-release": "24.0.0",
     "typescript": "5.5.3",
     "vite": "4.5.2",

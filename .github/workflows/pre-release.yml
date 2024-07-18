@@ -27,7 +27,6 @@ jobs:
         run: npm run build
       - name: Pre-Release Package
         env:
-          HUSKY: 0 # skip the husky hooks
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # should be set in Github repo, need this to publish on NPM
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically provided by Github Actions, need this to create a GitHub Release
         run: |
