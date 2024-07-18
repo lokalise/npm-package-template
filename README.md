@@ -51,13 +51,6 @@ external: Object.keys(packageJson.dependencies).flatMap((dep) => [
 ])
 ```
 
-## Husky
-
-By default, pre-commit hook will run `npm run lint:fix`. Feel free to remove that if it's undesirable or add your own
-pre-commit commands.
-
-Check out [husky](https://typicode.github.io/husky) docs for more info.
-
 ## commitlint
 
 You can use `npm run commit` to interactively construct correct commit messsage.
