@@ -36,7 +36,7 @@
     "@semantic-release/release-notes-generator": "14.0.1",
     "semantic-release": "24.0.0",
     "typescript": "5.5.3",
-    "vite": "4.5.2",
+    "vite": "5.3.4",
     "vite-plugin-dts": "3.9.1",
     "vitest": "0.34.6"
   }
