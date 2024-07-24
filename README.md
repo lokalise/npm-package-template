@@ -36,20 +36,7 @@ The last thing to do is actually start writing your code! We recommend starting 
 
 ## Customizing the build
 
-The build system uses Vite. It is configured to treat `./src/index.ts` as the entry point of your repository. Feel free
-to change any particulars in `./vite.config.ts`. In particular if you require multiple entry points, we recommend
-reviewing Vite's documentation on this here: [Vite Library Mode](https://vitejs.dev/guide/build.html#library-mode).
-
-In case you add direct or peer dependencies, you should uncomment following lines (and corresponding import above) to
-ensure those dependencies are not directly included in the built package.
-
-```tsx
-external: Object.keys(packageJson.dependencies).flatMap((dep) => [
-	dep,
-	// Include all dependency paths, not just root
-	new RegExp(`^${dep}/`),
-])
-```
+The build system uses Vite with [@lokalise/package-vite-config](https://github.com/lokalise/shared-ts-libs/tree/main/packages/dev/package-vite-config) setup. It is configured to treat `./src/index.ts` as the entry point of your repository. Feel free to change any particulars in `./vite.config.ts`. In particular if you require multiple entry points, we recommend reviewing Vite's documentation on this here: [Vite Library Mode](https://vitejs.dev/guide/build.html#library-mode).
 
 ## commitlint
 
