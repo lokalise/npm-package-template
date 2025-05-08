@@ -27,7 +27,7 @@
     "dependencies": {},
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",
-        "@commitlint/cli": "^19.8.0",
+        "@commitlint/cli": "^19.8.1",
         "@commitlint/config-conventional": "^19.8.1",
         "@commitlint/prompt-cli": "^19.8.1",
         "@lokalise/biome-config": "^2.0.0",
