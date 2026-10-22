@@ -1,49 +1,51 @@
 {
-    "name": "@lokalise/your-project-name",
-    "version": "1.0.0",
-    "scripts": {
-        "build": "vite build",
-        "lint:ts": "tsc --noEmit",
-        "lint": "biome check && npm run lint:ts",
-        "lint:fix": "biome check --write",
-        "test": "vitest run",
-        "commit": "commit"
-    },
-    "type": "module",
-    "files": ["dist"],
-    "main": "./dist/index.cjs",
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "require": "./dist/index.cjs",
-            "import": "./dist/index.js"
-        }
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "dependencies": {},
-    "devDependencies": {
-        "@biomejs/biome": "^1.9.4",
-        "@commitlint/cli": "^21.2.0",
-        "@commitlint/config-conventional": "^21.2.4",
-        "@commitlint/prompt-cli": "^21.2.3",
-        "@lokalise/biome-config": "^2.0.0",
-        "@lokalise/package-vite-config": "^3.1.2",
-        "@semantic-release/changelog": "^7.0.0",
-        "@semantic-release/commit-analyzer": "^13.0.1",
-        "@semantic-release/git": "^11.0.1",
-        "@semantic-release/github": "^12.0.10",
-        "@semantic-release/npm": "^13.2.0",
-        "@semantic-release/release-notes-generator": "^14.1.1",
-        "semantic-release": "^25.0.9",
-        "typescript": "^5.5.4",
-        "vite": "^5.4.11",
-        "vitest": "^3.2.4"
-    },
-    "engines": {
-        "node": ">=20"
+  "name": "@lokalise/your-project-name",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "vite build",
+    "lint:ts": "tsc --noEmit",
+    "lint": "biome check && npm run lint:ts",
+    "lint:fix": "biome check --write",
+    "test": "vitest run",
+    "commit": "commit"
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
     }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "~2.5.15",
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@commitlint/prompt-cli": "^21.2.3",
+    "@lokalise/biome-config": "^4.0.0",
+    "@lokalise/package-vite-config": "^3.1.2",
+    "@semantic-release/changelog": "^7.0.0",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^11.0.1",
+    "@semantic-release/github": "^12.0.10",
+    "@semantic-release/npm": "^13.2.0",
+    "@semantic-release/release-notes-generator": "^14.1.1",
+    "semantic-release": "^25.0.9",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.11",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }
