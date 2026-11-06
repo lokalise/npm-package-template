@@ -1,5 +1,7 @@
 # YourProjectName
 
+Deprecated. Use https://github.com/lokalise/create-package for private packages, and https://github.com/lokalise/shared-ts-libs for public ones.
+
 ## Project Purpose
 
 This is a template repository, intended to accelerate teams at Lokalise to create public packages for publishing on NPM.
